@@ -1,4 +1,4 @@
-# Backend Basics
+# backend-basics
 
 Учебный проект для знакомства со структурой Python-проекта.
 Проект создаёт задачу, хранит её в словаре в оперативной памяти,
@@ -17,7 +17,7 @@
 Проверьте Git командой `git --version`, затем склонируйте репозиторий:
 
 ```bash
-git clone https://github.com/Sofa9890/PythonX5.git backend-basics
+git clone https://github.com/Sofa9890/backend-basics.git
 cd backend-basics
 ```
 
@@ -62,6 +62,21 @@ python -m pip install -r requirements.txt
 
 В VS Code выберите `.venv` как интерпретатор Python, если редактор
 предлагает выбор интерпретатора.
+
+## Запуск в PyCharm
+
+1. Откройте папку `backend-basics` через File → Open.
+2. В Settings → Python → Interpreter выберите Python 3.12 из локального
+   окружения `.venv`: `.venv/bin/python` на macOS/Linux или
+   `.venv\Scripts\python.exe` на Windows. Если окружения ещё нет, сначала
+   создайте его и установите зависимости по инструкции выше.
+3. Откройте `main.py` в корне проекта и выберите Run → Run 'main'.
+   Рабочая папка конфигурации запуска — корень `backend-basics`.
+4. Результат появится в нижней панели Run. Успешный запуск завершается
+   сообщением `Process finished with exit code 0`.
+
+`exceptions.py` только объявляет класс ошибки. Для демонстрации программы
+запускайте `main.py`.
 
 ## Запуск
 
@@ -109,18 +124,22 @@ backend-basics/
 └── requirements.txt
 ```
 
-`.venv` и кеши создаются локально и в Git не включаются.
+`.venv/`, `venv/`, настройки `.idea/` и кеши создаются локально и в Git не включаются.
+Окружение проекта называется именно `.venv`; `venv/` также исключено на случай
+создания окружения с другим именем.
 Модули `dataclasses`, `datetime` и `logging` устанавливать не нужно:
 это модули стандартной библиотеки Python.
 
 ## История Git
 
 Основная ветка — `main`. Подготовка окружения и добавление кода
-зафиксированы тремя осмысленными коммитами:
+зафиксированы отдельными осмысленными коммитами:
 
 1. `Initialize project environment` — `.gitignore`, зависимости, первый README.
 2. `Add task model and service logic` — пакет `src`, модель, сервисы, исключение и логирование.
 3. `Add entry point and usage instructions` — `main.py` и полная инструкция запуска.
+4. `Align project name and document PyCharm setup` — имя `backend-basics`,
+   инструкция PyCharm и исключение обоих вариантов папки окружения.
 
 ```bash
 git status
